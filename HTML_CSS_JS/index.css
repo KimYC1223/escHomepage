@@ -165,15 +165,3 @@ input[name="r"]{
 .header{
 
 }
-
-#r1:checked  ~ .start {
-  margin-left: 0%;
-}
-
-#r2:checked  ~ .start{
-margin-left: -33.3%;
-}
-
-#r3:checked ~ .start {
-margin-left: -66.6%;
-}
