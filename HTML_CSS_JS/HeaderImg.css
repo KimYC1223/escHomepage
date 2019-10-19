@@ -1,0 +1,18 @@
+.headerImg{
+  width: 300%;
+  margin-top: 10px;
+  display:flex;
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+  overflow-y:hidden;
+}
+
+.slide {
+  width:33.3%;
+  overflow-y:hidden;
+}
+
+.start{
+  transition: 0.2s;
+}

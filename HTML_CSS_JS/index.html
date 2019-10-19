@@ -4,10 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="text/css" href="index.css" />
-  <title>한국 항공대학교 전자 회로 동아리 E.S.C.</title>
+  <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="HeaderImg.css" />
+  <script src="HeaderImg.js"></script>
+  <script src="index.js"></script>
+  <title>항공대 전자 회로 동아리 E.S.C.</title>
 </head>
 <body>
-  
+  <div class="paddingBox">
+    <div class="header">
+      <div class ="mostTop">
+        <span class="headerName"><a href="/">&nbsp;&nbsp;테스트페이지</a></span>
+      </div>
+
+      <div class="headerBlackImg">
+        <div class="headerImgText" id="headerImgText"></div>
+        <div class ="headerSelect" id = "headerSelect">
+          <label for="r1" class="buttonDiv"></label>
+          <label for="r2" class="buttonDiv"></label>
+          <label for="r3" class="buttonDiv"></label>
+        </div>
+      </div>
+      <div class="headerImg" id="headerImgDiv">
+        <input type="radio" name="r" id="r1">
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3"><br />
+      </div>
+    </div>
+
+    <div class="nav">
+      <ul class="navTop">
+        <li>
+          소개
+          <ul class="navSub">
+            <li><a href="/greeting">인삿말</a></li>
+            <li><a href="/intro">동아리 소개</a></li>
+            <li><a href="/history">동아리 연혁</a></li>
+            <li><a href="/adminMember">운영진</a></li>
+          </ul>
+        </li>
+
+        <li>
+          동아리 활동
+          <ul class="navSub">
+            <li><a href="/calander">동아리 달력</a></li>
+            <li><a href="/photo">사진첩</a></li>
+            <li><a href="/award">명예의 전당</a></li>
+          </ul>
+        </li>
+
+        <li>
+          게시판
+          <ul class="navSub">
+            <li><a href="/notice">공지 사항</a></li>
+            <li><a href="/post">자유 게시판</a></li>
+            <li><a href="/suggestions">익명 건의 사항</a></li>
+          </ul>
+        </li>
+
+        <li>
+          운영
+          <ul class="navSub">
+            <li><a href="/address">동아리 주소록</a></li>
+            <li><a href="/accountBook">회계 장부</a></li>
+            <li><a href="/address">관리자 페이지</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content">
+
+    </div>
+
+    <div class="footer">
+
+    </div>
+  </div>
 </body>
 </html>

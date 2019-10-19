@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true })); //
 require('./routes.js')(app);
 
 // set up a static file server that points to the "client" directory
-app.use(express.static(path.join(__dirname, './')));
+app.use(express.static(path.join(__dirname, './HTML_CSS_JS')));
 
 // Save our port
 var port = process.env.PORT || 8000;
