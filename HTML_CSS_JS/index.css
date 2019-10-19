@@ -3,6 +3,11 @@ a:visited {text-decoration: none; color: black;}
 a:active {text-decoration: none; color: black;}
 a:hover {text-decoration: none; color: black;}
 
+HTML{
+  width:100%;
+  height:100%;
+}
+
 *{
   margin:0px;
   padding:0px;
@@ -19,6 +24,12 @@ body {
   width: 100%;
   height:100%;
   align-items: center;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+display:none;
 }
 
 .paddingBox{
@@ -31,7 +42,7 @@ body {
 .header{
   display: block;
   overflow: hidden;
-  width:50%;
+  width:100%;
   height:350px;
   transition: 1s;
 }
@@ -40,7 +51,7 @@ body {
   .header{
     display: block;
     overflow: hidden;
-    width:50%;
+    width:100%;
     height:450px;
     transition: 1s;
   }
@@ -243,7 +254,7 @@ input[name="r"]{
   width:100%;
   color:white;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.9;
   height:0px;
   transition: 0.2s;
   display: none;
@@ -273,10 +284,161 @@ input[name="r"]{
   display: block;
 }
 
-.header{
-  width: 100%
+.main{
+  min-height: 500px;
+  margin-top:60px;
+  padding: 10px 10px 10px 10px;
 }
 
-.header{
+.mainPaddingBox{
+  width:100%;
+  height:100%;
+}
 
+.aside{
+  position: absolute;
+  height:400px;
+  width:245px;
+  margin-left:-300px;
+  display: inline-block;
+  background-color: #7f8c8d;
+  border-radius: 7px;
+  color:white;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+@media screen and (min-width:1024px){
+  .aside{
+    position: absolute;
+    height:400px;
+    width:245px;
+    margin-left:0px;
+    display: inline-block;
+    background-color: #7f8c8d;
+    border-radius: 7px;
+    color:white;
+    z-index: -1;
+    transition: 0.5s;
+  }
+}
+
+.content{
+  position: relative;
+  display: block;
+  height:700px;
+  width:calc(100%);
+  z-index: -5;
+  transition: 0.5s;
+}
+
+@media screen and (min-width:1024px){
+  .content{
+    position: relative;
+    display: block;
+    height:700px;
+    width:calc( 100% - 250px );
+    margin-left:250px;
+    transition: 0.5s;
+    z-index: -5;
+  }
+}
+
+.footer{
+  height:200px;
+  text-align: center;
+  width:100%;
+  padding:0px 0px 0px 0px;
+  background-color: #2c3e50;
+  transition: 0.5s;
+}
+
+@media screen and (min-width:1024px){
+  .footer{
+    height:200px;
+    text-align: center;
+    width:100%;
+    padding:0px 0px 0px 0px;
+    background-color: #2c3e50;
+    transition: 0.5s;
+  }
+}
+
+.footerPaddingBox{
+  border-top:5px solid #7f8c8d;
+  padding-top: 20px;
+  width: 100%;
+  height:100%;
+  display: inline-block;
+  background-color: #2c3e50;
+  color:white;
+}
+
+.footerPaddingBox ul li{
+  float: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 15px 5px;
+  transition: 0.4s;
+}
+
+@media screen and (min-width:1024px){
+  .footerPaddingBox ul li{
+    float: none;
+    display: inline-block;
+    margin: 15px 5px;
+    font-size: 16px;
+    transition: 0.4s;
+  }
+}
+
+.footerText1{
+  display: none;
+}
+
+.footerText2{
+  display: block;
+  color:#7f8c8d;
+}
+
+@media screen and (min-width:1024px){
+  .footerText1{
+    display: block;
+    color:#7f8c8d;
+  }
+
+  .footerText2{
+    display: none;
+  }
+}
+
+.footerLink1 ul li a{
+  transition: 0.2s;
+  color:white;
+}
+
+.footerLink1 ul li a:hover {
+  color:#7f8c8d;
+}
+
+.footerLink2 ul li a {
+  font-weight: 100;
+  font-size: 35px;
+  margin: 0px 5px;
+  color:#7f8c8d ;
+  transition: 0.2s;
+}
+
+.footerLink2 ul li a:hover {
+  color:white ;
+}
+
+@media screen and (min-width:1024px){
+  .footerLink2 ul li a {
+    font-weight: 100;
+    font-size: 35px;
+    margin: 0px 10px;
+    color:#7f8c8d ;
+    transition: 0.2s;
+  }
 }
