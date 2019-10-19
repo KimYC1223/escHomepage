@@ -7,4 +7,4 @@ let HeaderImgBtn = ['<label for="r1" class="buttonDiv"></label>',
                     '<label for="r2" class="buttonDiv"></label>',
                     '<label for="r3" class="buttonDiv"></label>']
 
-let HeaderText = '홈페이지테스트!'
+let HeaderText = 'ESC에 오신 것을 환영합니다!'

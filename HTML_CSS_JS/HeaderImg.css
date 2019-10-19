@@ -1,6 +1,6 @@
 .headerImg{
   width: 300%;
-  margin-top: 10px;
+  margin-top: 60px;
   display:flex;
   position:relative;
   top:50%;
@@ -14,7 +14,7 @@
 }
 
 .start{
-  transition: 0.2s;
+  transition: 0.7s;
 }
 
 #r1:checked  ~ .start {
