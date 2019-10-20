@@ -8,6 +8,18 @@
   overflow-y:hidden;
 }
 
+@media screen and (max-width:499px) {
+  .headerImg{
+    width: 300%;
+    margin-top: 40px;
+    display:flex;
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+    overflow-y:hidden;
+  }
+}
+
 .slide {
   width:33.3%;
   overflow-y:hidden;

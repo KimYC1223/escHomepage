@@ -47,16 +47,6 @@ display:none;
   transition: 1s;
 }
 
-@media screen and (min-width:1024px){
-  .header{
-    display: block;
-    overflow: hidden;
-    width:100%;
-    height:450px;
-    transition: 1s;
-  }
-}
-
 .mostTop{
   position: absolute;
   width:100%;
@@ -65,18 +55,6 @@ display:none;
   background-color: white;
   transition: 1s;
   z-index: 3;
-}
-
-@media screen and (min-width:1024px){
-  .mostTop{
-    position: absolute;
-    width:100%;
-    height:100px;
-    line-height: 100px;
-    background-color: white;
-    transition: 1s;
-    z-index: 3;
-  }
 }
 
 .titleLogo{
@@ -108,14 +86,6 @@ display:none;
   transition: 0.7s;
 }
 
-@media screen and (min-width:1024px){
-  .headerName{
-    font-size:25px;
-    font-weight: bold;
-    transition: 0.7s;
-  }
-}
-
 .slide img{
   width:100%;
   height:100%;
@@ -136,19 +106,6 @@ display:none;
   transition: 1s;
 }
 
-@media screen and (min-width:1024px){
-  .headerImgText{
-    position: relative;
-    top: 60%;
-    left: 50%;
-    transform:translate(-50%,-50%);
-    color:white;
-    text-align: center;
-    font-size:50px;
-    transition: 1s;
-  }
-}
-
 .headerSelect{
   position: relative;
   bottom: -280px;
@@ -156,17 +113,6 @@ display:none;
   transform:translate(-50%,-50%);
   text-align: center;
   transition: 0.5s;
-}
-
-@media screen and (min-width:1024px){
-  .headerSelect{
-    position: relative;
-    bottom: -300px;
-    left: 50%;
-    transform:translate(-50%,-50%);
-    text-align: center;
-    transition: 0.5s;
-  }
 }
 
 .buttonDiv{
@@ -178,19 +124,6 @@ display:none;
   margin: 0px 5px;
   cursor:pointer;
   transition: 1s;
-}
-
-@media screen and (min-width:1024px){
-  .buttonDiv{
-    width:45px;
-    height:10px;
-    background-color: none;
-    border: 2px solid white;
-    display: inline-block;
-    margin: 0px 6px;
-    cursor:pointer;
-    transition: 1s;
-  }
 }
 
 .buttonDiv:hover {
@@ -212,21 +145,6 @@ input[name="r"]{
   background-color: #000000;
   opacity: 0.5;
   transition: 1s;
-}
-
-@media screen and (min-width:1024px){
-  .headerBlackImg{
-    position: absolute;
-    top: 250px;
-    left: 50%;
-    transform:translate(-50%,-50%);
-    z-index: 1;
-    width: 100%;
-    height:400px;
-    background-color: #000000;
-    opacity: 0.5;
-    transition: 1s;
-  }
 }
 
 .nav{
@@ -308,21 +226,6 @@ input[name="r"]{
   transition: 0.5s;
 }
 
-@media screen and (min-width:1024px){
-  .aside{
-    position: absolute;
-    height:400px;
-    width:245px;
-    margin-left:0px;
-    display: inline-block;
-    background-color: #7f8c8d;
-    border-radius: 7px;
-    color:white;
-    z-index: -1;
-    transition: 0.5s;
-  }
-}
-
 .content{
   position: relative;
   display: block;
@@ -332,36 +235,13 @@ input[name="r"]{
   transition: 0.5s;
 }
 
-@media screen and (min-width:1024px){
-  .content{
-    position: relative;
-    display: block;
-    height:700px;
-    width:calc( 100% - 250px );
-    margin-left:250px;
-    transition: 0.5s;
-    z-index: -5;
-  }
-}
-
 .footer{
-  height:200px;
+  height:210px;
   text-align: center;
   width:100%;
   padding:0px 0px 0px 0px;
   background-color: #2c3e50;
   transition: 0.5s;
-}
-
-@media screen and (min-width:1024px){
-  .footer{
-    height:200px;
-    text-align: center;
-    width:100%;
-    padding:0px 0px 0px 0px;
-    background-color: #2c3e50;
-    transition: 0.5s;
-  }
 }
 
 .footerPaddingBox{
@@ -382,16 +262,6 @@ input[name="r"]{
   transition: 0.4s;
 }
 
-@media screen and (min-width:1024px){
-  .footerPaddingBox ul li{
-    float: none;
-    display: inline-block;
-    margin: 15px 5px;
-    font-size: 16px;
-    transition: 0.4s;
-  }
-}
-
 .footerText1{
   display: none;
 }
@@ -399,17 +269,6 @@ input[name="r"]{
 .footerText2{
   display: block;
   color:#7f8c8d;
-}
-
-@media screen and (min-width:1024px){
-  .footerText1{
-    display: block;
-    color:#7f8c8d;
-  }
-
-  .footerText2{
-    display: none;
-  }
 }
 
 .footerLink1 ul li a{
@@ -433,12 +292,136 @@ input[name="r"]{
   color:white ;
 }
 
+
+/*==================================================================
+*
+*    1024px 해상도 이상 CSS 설정
+*    2019.10.19 KimYC1223
+*
+*==================================================================*/
 @media screen and (min-width:1024px){
+  .header{
+    height:450px;
+  }
+
+  .mostTop{
+    height:100px;
+    line-height: 100px;
+  }
+
+  .headerName{
+    font-size:25px;
+    font-weight: bold;
+  }
+
+  .headerImgText{
+    font-size:50px;
+  }
+
+  .headerSelect{
+    bottom: -300px;
+  }
+
+  .buttonDiv{
+    width:45px;
+    height:10px;
+    margin: 0px 6px;
+  }
+
+  .headerBlackImg{
+    top: 250px;
+    height:400px;
+  }
+
+  .aside{
+    margin-left:0px;
+  }
+
+  .content{
+    width:calc( 100% - 250px );
+    margin-left:250px;
+  }
+
+  .footerPaddingBox ul li{
+    font-size: 16px;
+  }
+
+  .footer{
+    height:190px;
+  }
+
+  .footerText1{
+    display: block;
+    color:#7f8c8d;
+  }
+
+  .footerText2{
+    display: none;
+  }
+
   .footerLink2 ul li a {
-    font-weight: 100;
-    font-size: 35px;
     margin: 0px 10px;
-    color:#7f8c8d ;
-    transition: 0.2s;
+  }
+}
+
+/*==================================================================
+*
+*    모바일 유저를 위한 CSS 설정
+*    2019.10.20 KimYC1223
+*
+*==================================================================*/
+@media screen and (max-width:499px) {
+  .header{
+    height:250px;
+  }
+
+  .headerImgText{
+    top: 60%;
+    font-size:20px;
+  }
+
+  .headerSelect{
+    bottom: -200px;
+  }
+
+  .buttonDiv{
+    width:20px;
+    height:6px;
+    margin: 0px 3px;
+  }
+
+  .headerBlackImg{
+    top: 125px;
+    height:250px;
+  }
+
+  .userMenu{
+    font-size:10pt;
+  }
+
+  .headerName{
+    font-size:10pt;
+    font-weight: bold;
+  }
+
+  .nav ul li {
+    font-size:10pt;
+  }
+
+  .main{
+    min-height: 300px;
+  }
+
+  .aside{
+    height:270px;
+  }
+
+  .footer{
+    height:210px;
+  }
+
+  .footerPaddingBox ul li{
+    font-size: 10px;
+    margin: 10px 3px;
   }
 }
