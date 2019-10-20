@@ -1,0 +1,75 @@
+/*==================================================================
+*
+*    Main Page CSS
+*    2019.10.20 KimYC1223
+*
+*==================================================================*/
+.main{
+  text-align: center;
+  align-items: center;
+}
+
+.mainPageContent{
+  display: inline-block;
+  height:400px;
+  width:calc(50% - 70px);
+  margin:10px 20px;
+  padding:10px 10px;
+  transition: 0.5s;
+}
+
+.titleName{
+  border-bottom:2px solid rgb(149, 165, 168);
+  margin-bottom:10px;
+  height:40px;
+  line-height: 40px;
+}
+
+.titleKorean{
+  float:left;
+  font-size:20px;
+}
+
+.titleEnglish{
+  float:right;
+  color:rgb(173, 173, 175);
+}
+
+.thumbnail{
+  display: inline;
+  float: left;
+  width:100%;
+}
+
+/*==================================================================
+*
+*    1024px 해상도 이상 CSS 설정
+*    2019.10.19 KimYC1223
+*
+*==================================================================*/
+@media screen and (min-width:1024px) {
+  .mainPageContent{
+    width:calc(33.3% - 80px);
+  }
+
+  .thumbnail{
+    width:60%;
+  }
+
+  .thumbnailImg{
+    display: block;
+    width:100%;
+  }
+}
+
+/*==================================================================
+*
+*    모바일 유저를 위한 CSS 설정
+*    2019.10.20 KimYC1223
+*
+*==================================================================*/
+@media screen and (max-width:499px) {
+  .mainPageContent{
+    width:calc(100% - 60px);
+  }
+}
