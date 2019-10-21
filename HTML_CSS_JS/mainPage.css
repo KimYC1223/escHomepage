@@ -11,9 +11,10 @@
 
 .mainPageContent{
   display: inline-block;
-  height:400px;
+  min-height:200px;
+  height:250px;
   width:calc(50% - 70px);
-  margin:10px 20px;
+  margin:0px 5px;
   padding:10px 10px;
   transition: 0.5s;
 }
@@ -36,29 +37,112 @@
 }
 
 .thumbnail{
-  display: inline;
+  display: block;
   float: left;
   width:100%;
 }
 
+.thumbnailTitle{
+  display: inline-block;
+  width:100%;
+  height:20px;
+  overflow: hidden;
+}
+
+.resentPost{
+  width:100%;
+}
+
+.resentPost tr {
+  height: 20px;
+  vertical-align: center;
+}
+
+.resentPost td:nth-child(1){
+  width: 5%;
+}
+
+.resentPost td:nth-child(2){
+  width: 80%;
+}
+
+.resentPost td:nth-child(3){
+  width: 5%;
+}
+
+.resentPost td:nth-child(4){
+  width: 10%;
+}
+
 /*==================================================================
 *
-*    1024px 해상도 이상 CSS 설정
+*    1400px 해상도 이상 CSS 설정
 *    2019.10.19 KimYC1223
 *
 *==================================================================*/
 @media screen and (min-width:1024px) {
+  .main{
+    height:100%;
+  }
+
   .mainPageContent{
     width:calc(33.3% - 80px);
+    height:17.5vw;
+    background-color: yellow;
+  }
+
+  .mainPageContent2{
+    width:calc(33.3% - 80px);
+    height:17.5vw;
+    display: inline-block;
+    margin:0px 5px;
+    padding:10px 10px;
+    transition: 0.5s;
+    background-color: green;
+  }
+
+
+  .thumbnailBox{
+    display: inline-block;
+    float:left;
+    width:45%;
+  }
+
+  .timeTable{
+    display: inline-block;
+    width:55%;
+    height:13.5vw;
+  }
+
+  .timeTable table{
+    width:100%;
+  }
+
+  .resentPost{
+    display: inline-block;
+    width:55%;
+    height:13.5vw;
   }
 
   .thumbnail{
-    width:60%;
+    width:100%;
+  }
+
+  .thumbnailTitle{
+    font-size:13px;
   }
 
   .thumbnailImg{
     display: block;
     width:100%;
+  }
+
+  .resentPost tr {
+    height: 2.1vw;
+  }
+
+  .timeTable tr {
+    height: 30px;
   }
 }
 
