@@ -12,6 +12,7 @@ var path          = require('path');
 var util          = require('util');
 var os            = require('os');
 var session       = require('express-session');
+var FileStore     = require('session-file-store')(session);
 
 
 // instantiate the app
@@ -21,7 +22,8 @@ var app = express();
 app.use(session({
  secret: 'ESC_HOMEPAGE',
  resave: true,
- saveUninitialized: true
+ saveUninitialized: true,
+ store: new FileStore({path:'./session'})
 }));
 
 // Load all of our middleware
