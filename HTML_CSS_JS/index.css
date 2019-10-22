@@ -1,3 +1,9 @@
+/*==================================================================
+*
+*    거의 모든 HTML 파일에 적용될 기본 CSS
+*    2019.10.18 KimYC1223
+*
+*==================================================================*/
 a:link {text-decoration: none; color: black;}
 a:visited {text-decoration: none; color: black;}
 a:active {text-decoration: none; color: black;}

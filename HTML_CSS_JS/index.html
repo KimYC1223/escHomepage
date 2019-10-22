@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--============================================================================================
+*
+*    Main Page HTML : 처음 사용자에게 보여지는 대문 페이지
+*    2019.10.18 KimYC1223
+*
+*============================================================================================-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +13,31 @@
   <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="mainPage.css" />
-  <link rel="stylesheet" href="HeaderImg.css" />
-  <script src="HeaderImg.js"></script>
-  <script src="index.js"></script>
+  <link rel="stylesheet" href="index.css" />        <!-- 모든 페이지의 기본 CSS              -->
+  <link rel="stylesheet" href="mainPage.css" />     <!-- Main Page만의 CSS                  -->
+  <link rel="stylesheet" href="HeaderImg.css" />    <!-- Header Img를 조절하기위한 CSS       -->
+  <script src="HeaderImg.js"></script>              <!-- Header Img 파일 불러오기            -->
+  <script src="index.js"></script>                  <!-- 불러온 Header Img 파일 적용하기  CSS -->
   <title>항공대 전자 회로 동아리 E.S.C.</title>
 </head>
 <body>
   <div class="paddingBox">
+    <!--========================================================================================
+    *
+    *    Header : 페이지 제일 위에 로고와 로그인 정보를 표시하는 해더
+    *    최대 8장 까지 지원하는 이미지 슬라이더도 제공
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="header">
       <div class ="mostTop">
         <span class="headerName"><a href="/">&nbsp;&nbsp;전자회로 동아리 ESC</a></span>
         <span class ="userMenu">
           가나다라마바사
         </span>
-        <div class="mainLogo"><a href="/"><img class="titleLogo"src="./img/header/TitleLogo.png" alt=""></a></div>
+        <div class="mainLogo">
+          <a href="/"><img class="titleLogo"src="./img/header/TitleLogo.png" alt=""></a>
+        </div>
 
       </div>
 
@@ -43,6 +58,13 @@
       </div>
     </div>
 
+
+    <!--========================================================================================
+    *
+    *    nav : 페이지를 주로 이동 할 수 있는 내비게이터
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="nav">
       <ul class="navTop">
         <li>
@@ -84,7 +106,20 @@
       </ul>
     </div>
 
+    <!--========================================================================================
+    *
+    *    main : 주된 페이지 내용이 담기는 곳. 페이지마다 다르다.
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="main">
+
+      <!--======================================================================================
+      *
+      *    notice : 공지사항
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
       <div class ="mainPageContent">
         <div class="titleName">
           <span class="titleKorean">공지 사항</span>
@@ -138,6 +173,13 @@
         </div>
       </div>
 
+
+      <!--======================================================================================
+      *
+      *    Feee Board : 자유 게시판
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
       <div class ="mainPageContent">
         <div class="titleName">
           <span class="titleKorean">자유 게시판</span>
@@ -191,6 +233,12 @@
         </div>
       </div>
 
+      <!--======================================================================================
+      *
+      *    Album : 사진첩
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
       <div class ="mainPageContent">
         <div class="titleName">
           <span class="titleKorean">사진첩</span>
@@ -244,6 +292,12 @@
         </div>
       </div>
 
+      <!--======================================================================================
+      *
+      *    Calendar : 동아리 달력
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
       <div class ="mainPageContent">
         <div class="titleName">
           <span class="titleKorean">동아리 달력</span>
@@ -297,6 +351,12 @@
         </div>
       </div>
 
+      <!--======================================================================================
+      *
+      *    Anonymous : 익명 건의 사항
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
       <div class ="mainPageContent">
         <div class="titleName">
           <span class="titleKorean">익명 건의사항</span>
@@ -350,20 +410,82 @@
         </div>
       </div>
 
+      <!--======================================================================================
+      *
+      *    Transfortation : 경의선 시간표
+      *    2019.10.22 KimYC1223
+      *
+      *======================================================================================-->
       <div class ="mainPageContent">
         <div class="titleName">
           <span class="titleKorean">경의선 시간표</span>
           <span class="titleEnglish">Transfortation</span>
         </div>
-
         <div class="timeTable">
+          <div class ="tableBox">
+            <table class="toPajuTimeTalbe">
+              <tr>
+                <td colspan="2">
+                  <table class="toPaju" width="80%">
+                    <tr>
+                      <td align="right"><span class="pajuText">강매</span></td>
+                      <td>
+                        <span class="arrowHighlight">◀</span>
+                        &nbsp;<span class="hwajun">화전</span>
+                        &nbsp;<span class="arrowNone">▶</span>
+                      </td>
+                      <td align="left"><span class="susaekText">수색</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr class="timeTalbeTr">
+                <td><span id="toPajuLocation_1">열차 정보 없음</span></td>
+                <td><span id="toPajuOffset_1">-</span></td>
+              </tr>
+              <tr class="timeTalbeTr twoTr">
+                <td><span id="toPajuLocation_2">열차 정보 없음</span></td>
+                <td><span id="toPajuOffset_2">-</span></td>
+              </tr>
+            </table>
 
+            <table class="toSeoulTimeTalbe">
+              <tr>
+                <td colspan="2">
+                  <table class="toSeoul" width="80%">
+                    <tr>
+                      <td align="right"><span class="pajuText">강매</span></td>
+                      <td>
+                        <span class="arrowNone">◀</span>
+                        &nbsp;<span class="hwajun">화전</span>
+                        &nbsp;<span class="arrowHighlight">▶</span>
+                      </td>
+                      <td align="left"><span class="susaekText">수색</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr class="timeTalbeTr">
+                <td><span id="toSeoulLocation_1">열차 정보 없음</span></td>
+                <td><span id="toSeoulOffset_1">-</span></td>
+              </tr>
+              <tr class="timeTalbeTr twoTr">
+                <td><span id="toSeoulLocation_2">열차 정보 없음</span></td>
+                <td><span id="toSeoulOffset_2">-</span></td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
-
-
     </div>
 
+
+    <!--========================================================================================
+    *
+    *    Footer : 페이지 최 하단에 나타나는 Footer
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="footer" align="center">
       <div class="footerPaddingBox">
         <span class ="footerText1">
@@ -392,7 +514,6 @@
             <li><a href="http://naver.me/58Op0YST"><i class="fas fa-map-marked-alt"></i></a></li>
             <li><a href="http://Kimyc1223.github.io"><i class="fas fa-globe-asia"></i></a></li>
           </ul>
-
         </span>
       </div>
     </div>

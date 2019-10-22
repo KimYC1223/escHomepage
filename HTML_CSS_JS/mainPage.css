@@ -28,12 +28,15 @@
 
 .titleKorean{
   float:left;
-  font-size:20px;
+  font-size:18px;
+  transition: 1s;
 }
 
 .titleEnglish{
   float:right;
+  font-size:10px;
   color:rgb(173, 173, 175);
+  transition : 1s;
 }
 
 .thumbnail{
@@ -74,9 +77,62 @@
   width: 10%;
 }
 
+.tableBox{
+  display: inline:;-block;
+  float:left;
+  width:calc(100% - 10px);
+  padding: 5px 5px;
+}
+
+.timeTalbeTr, .timeTalbeTr td{
+  border-bottom:1px solid rgb(214, 214, 218);
+}
+
+.timeTalbeTr, .timeTalbeTr td:nth-child(1){
+  width:80%;
+}
+.timeTalbeTr, .timeTalbeTr td:nth-child(2){
+  width:80%;
+}
+
+.toPaju, .toSeoul{
+  background-color: rgb(58, 146, 223);
+  font-size: 12px;
+  border-radius: 30px;
+  color:white;
+}
+
+.toPajuTimeTalbe, .toSeoulTimeTalbe{
+  font-size: 12px;
+}
+
+.toPaju td:nth-child(1),.toSeoul td:nth-child(3){
+  width:40%;
+}
+
+.toPaju td:nth-child(2),.toSeoul td:nth-child(2){
+  width:60%;
+}
+
+.toPaju td:nth-child(1),.toSeoul td:nth-child(3){
+  width:0%;
+}
+
+.toPaju .susaekText, .toSeoul .pajuText{
+  color: rgb(97, 172, 238);
+}
+
+.arrowNone {
+  color: rgb(133, 193, 246);
+}
+
+.arrowNone, .toPaju .susaekText, .toSeoul .pajuText{
+  display: none;
+}
+
 /*==================================================================
 *
-*    1400px 해상도 이상 CSS 설정
+*    1024px 해상도 이상 CSS 설정
 *    2019.10.19 KimYC1223
 *
 *==================================================================*/
@@ -88,19 +144,7 @@
   .mainPageContent{
     width:calc(33.3% - 80px);
     height:17.5vw;
-    background-color: yellow;
   }
-
-  .mainPageContent2{
-    width:calc(33.3% - 80px);
-    height:17.5vw;
-    display: inline-block;
-    margin:0px 5px;
-    padding:10px 10px;
-    transition: 0.5s;
-    background-color: green;
-  }
-
 
   .thumbnailBox{
     display: inline-block;
@@ -110,7 +154,7 @@
 
   .timeTable{
     display: inline-block;
-    width:55%;
+    width:100%;
     height:13.5vw;
   }
 
@@ -122,6 +166,14 @@
     display: inline-block;
     width:55%;
     height:13.5vw;
+  }
+
+  .titleKorean{
+    font-size:20px;
+  }
+
+  .titleEnglish{
+    font-size:16px  ;
   }
 
   .thumbnail{
@@ -141,8 +193,52 @@
     height: 2.1vw;
   }
 
+  .tableBox{
+    font-size:12px;
+  }
   .timeTable tr {
     height: 30px;
+  }
+
+  .twoTr{
+    display:none;
+  }
+
+  .toSeoulTimeTalbe, .toPajuTimeTalbe{
+    height:50%;
+    font-size: 12px;
+  }
+
+  .toPaju, .toSeoul{
+    font-size: 16px;
+  }
+
+  .toPaju td:nth-child(1),.toSeoul td:nth-child(1){
+    width:35%;
+  }
+
+  .toPaju td:nth-child(2),.toSeoul td:nth-child(2){
+    width:30%;
+  }
+
+  .toPaju td:nth-child(3),.toSeoul td:nth-child(3){
+    width:35%;
+  }
+
+  .arrowNone, .toPaju .susaekText, .toSeoul .pajuText{
+    display: inline;
+  }
+}
+
+/*==================================================================
+*
+*    1400px 해상도 이상 CSS 설정
+*    2019.10.22 KimYC1223
+*
+*==================================================================*/
+@media screen and (min-width:1450px) {
+  .twoTr{
+    display:table-row;
   }
 }
 
