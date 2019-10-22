@@ -10,9 +10,9 @@
 }
 
 .mainPageContent{
-  display: inline-block;
+  display:inline-grid;
   min-height:200px;
-  height:250px;
+  height:calc(50vw + 140px);
   width:calc(50% - 70px);
   margin:0px 5px;
   padding:10px 10px;
@@ -78,10 +78,34 @@
 }
 
 .tableBox{
-  display: inline:;-block;
+  display: inline-block;
   float:left;
   width:calc(100% - 10px);
   padding: 5px 5px;
+  margin-top: -19vw;
+}
+
+.timeTable{
+  width:100%;
+  height: 20vh;
+  align-items: center;
+  text-align: center;
+}
+
+.timeTable tr:nth-child(1) td table{
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.toSeoulTimeTalbe{
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.currentTime{
+  font-size:14px;
 }
 
 .timeTalbeTr, .timeTalbeTr td{
@@ -92,7 +116,7 @@
   width:80%;
 }
 .timeTalbeTr, .timeTalbeTr td:nth-child(2){
-  width:80%;
+  width:20%;
 }
 
 .toPaju, .toSeoul{
@@ -103,6 +127,9 @@
 }
 
 .toPajuTimeTalbe, .toSeoulTimeTalbe{
+  width:100%;
+  margin-top:10px;
+  margin-bottom: 10px;
   font-size: 12px;
 }
 
@@ -120,15 +147,69 @@
 
 .toPaju .susaekText, .toSeoul .pajuText{
   color: rgb(97, 172, 238);
+  font-size: 14px;
+}
+
+.hwajun, .arrowHighlight, .toPaju .pajuText, .toSeoul .susaekText{
+  font-size:14px;
 }
 
 .arrowNone {
   color: rgb(133, 193, 246);
+  font-size: 14px;
 }
 
 .arrowNone, .toPaju .susaekText, .toSeoul .pajuText{
   display: none;
 }
+
+.currentTime{
+  float : right;
+}
+
+.stationImg{
+  width:100%;
+  height:36vw;
+  margin-bottom: 20px;
+}
+
+.stationImgTd{
+  width:100%;
+  background: url('./img/hwajun.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  transition: 0.1s;
+  overflow: hidden;
+  vertical-align: bottom;
+  text-align: left;
+  padding: 15px 15px;
+}
+
+.stationImgTd:hover {
+  background-size: 103% 103%;
+}
+
+.clickToNaver{
+
+  color:rgb(255, 255, 255, 0.44);
+  transition:0.4s;
+  font-size:26px;
+}
+
+.clickToNaverDiv{
+  width:100%;
+  height:35px;
+  overflow:hidden;
+  padding:0px 0px 0px 0px;
+  vertical-align: bottom;
+}
+
+.stationImgTd:hover .clickToNaver{
+  color:rgba(255, 255, 255);
+}
+
 
 /*==================================================================
 *
@@ -142,6 +223,7 @@
   }
 
   .mainPageContent{
+    display: inline-block;
     width:calc(33.3% - 80px);
     height:17.5vw;
   }
@@ -173,7 +255,7 @@
   }
 
   .titleEnglish{
-    font-size:16px  ;
+    font-size:16px;
   }
 
   .thumbnail{
@@ -195,6 +277,8 @@
 
   .tableBox{
     font-size:12px;
+    padding-top:5%;
+    margin-top: 0;
   }
   .timeTable tr {
     height: 30px;
@@ -206,7 +290,9 @@
 
   .toSeoulTimeTalbe, .toPajuTimeTalbe{
     height:50%;
-    font-size: 12px;
+    font-size: 14px;
+    margin-top:0px;
+    margin-bottom: 0px;
   }
 
   .toPaju, .toSeoul{
@@ -228,18 +314,48 @@
   .arrowNone, .toPaju .susaekText, .toSeoul .pajuText{
     display: inline;
   }
+
+  .stationImg{
+    display: none;
+  }
 }
 
 /*==================================================================
 *
-*    1400px 해상도 이상 CSS 설정
+*    1700px 해상도 이상 CSS 설정
 *    2019.10.22 KimYC1223
 *
 *==================================================================*/
-@media screen and (min-width:1450px) {
+@media screen and (min-width:1700px) {
   .twoTr{
     display:table-row;
   }
+}
+
+/*==================================================================
+*
+*    660px 해상도 이하 CSS 설정
+*    2019.10.23 KimYC1223
+*
+*==================================================================*/
+@media screen and (max-width:660px) {
+  .currentTime{
+    display:none;
+  }
+
+  .clickToNaver{
+    font-size:16px;
+  }
+
+  .stationImgTd{
+    padding:3px 10px;
+  }
+
+  .clickToNaverDiv{
+    height:25px;
+  }
+
+
 }
 
 /*==================================================================
@@ -251,5 +367,41 @@
 @media screen and (max-width:499px) {
   .mainPageContent{
     width:calc(100% - 60px);
+    height:calc(100vw + 140px);
   }
+
+  .tableBox{
+    margin-top: -20px;
+  }
+
+  .timeTableMotherDiv{
+    height:calc(270px);
+  }
+
+  .currentTime{
+    display: inline;
+    font-size:14px;
+    line-height: 20px;
+  }
+
+  .toPaju, .toSeoul{
+    font-size: 16px;
+  }
+
+  .toPajuTimeTalbe, .toSeoulTimeTalbe{
+    font-size: 14px;
+  }
+
+  .toPaju .susaekText, .toSeoul .pajuText{
+    font-size: 14px;
+  }
+
+  .hwajun, .arrowHighlight, .toPaju .pajuText, .toSeoul .susaekText{
+    font-size:14px;
+  }
+
+  .stationImg{
+    display:none;
+  }
+
 }

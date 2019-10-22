@@ -2,6 +2,22 @@
 <html lang="en">
 <!--============================================================================================
 *
+*    ┏━━━━━━━━━━━━━━━━━━━━┓
+*    ┃ ■■■■  ■■■■ ■■■■            ┃
+*    ┃ ■        ■       ■                  ┃
+*    ┃ ■■■■  ■■■■ ■                  ┃
+*    ┃ ■              ■ ■                  ┃
+*    ┃ ■■■■  ■■■■ ■■■■            ┃
+*    ┃                                        ┃
+*    ┃ K.A.U webpage ... ver 1.0.0            ┃
+*    ┠──────┬─────────────┨
+*    ┃ Developer  │ 35th 2013122041 KYC      ┃
+*    ┃ Language   │ HTML CSS Javascript      ┃
+*    ┃ Tools      │ Nodejs Mysql Atom        ┃
+*    ┃ gitHub     │ KimYC1223.github.io      ┃
+*    ┃ email      │ kau_esc@naver.com        ┃
+*    ┗━━━━━━┷━━━━━━━━━━━━━┛
+*
 *    Main Page HTML : 처음 사용자에게 보여지는 대문 페이지
 *    2019.10.18 KimYC1223
 *
@@ -83,6 +99,7 @@
             <li><a href="/calander">동아리 달력</a></li>
             <li><a href="/photo">사진첩</a></li>
             <li><a href="/award">명예의 전당</a></li>
+            <li><a href="/lab">ESC 실험실</a></li>
           </ul>
         </li>
 
@@ -416,13 +433,20 @@
       *    2019.10.22 KimYC1223
       *
       *======================================================================================-->
-      <div class ="mainPageContent">
+      <div class ="mainPageContent timeTableMotherDiv">
         <div class="titleName">
           <span class="titleKorean">경의선 시간표</span>
           <span class="titleEnglish">Transfortation</span>
         </div>
         <div class="timeTable">
           <div class ="tableBox">
+            <table class="stationImg" onclick="gotoNaver()">
+              <tr><td class="stationImgTd">
+                <div class="clickToNaverDiv">
+                  <span class="clickToNaver">클릭시 네이버 지도로 이동</span>
+                </div>
+              </td></tr>
+            </table>
             <table class="toPajuTimeTalbe">
               <tr>
                 <td colspan="2">
@@ -474,6 +498,7 @@
                 <td><span id="toSeoulOffset_2">-</span></td>
               </tr>
             </table>
+            <span class="currentTime" id="currentTimeSpan">기준 시간 : </span>
           </div>
         </div>
       </div>
