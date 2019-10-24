@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--============================================================================================
+*
+*    ┏━━━━━━━━━━━━━━━━━━━━┓
+*    ┃ ■■■■  ■■■■ ■■■■            ┃
+*    ┃ ■        ■       ■                  ┃
+*    ┃ ■■■■  ■■■■ ■                  ┃
+*    ┃ ■              ■ ■                  ┃
+*    ┃ ■■■■  ■■■■ ■■■■            ┃
+*    ┃                                        ┃
+*    ┃ K.A.U webpage ... ver 1.0.0            ┃
+*    ┠──────┬─────────────┨
+*    ┃ Developer  │ 35th 2013122041 KYC      ┃
+*    ┃ Language   │ HTML CSS Javascript      ┃
+*    ┃ Tools      │ Nodejs Mysql Atom        ┃
+*    ┃ gitHub     │ KimYC1223.github.io      ┃
+*    ┃ email      │ kau_esc@naver.com        ┃
+*    ┗━━━━━━┷━━━━━━━━━━━━━┛
+*
+*    Main Page HTML : 처음 사용자에게 보여지는 대문 페이지
+*    2019.10.18 KimYC1223
+*
+*============================================================================================-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script data-require="angularjs@1.5.7" data-semver="1.5.7" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="mobile.css" />
-  <link rel="stylesheet" href="HeaderImg.css" />
-  <script src="HeaderImg.js"></script>
-  <script src="index.js"></script>
+  <link rel="stylesheet" href="index.css" />        <!-- 모든 페이지의 기본 CSS              -->
+  <link rel="stylesheet" href="HeaderImg.css" />    <!-- Header Img를 조절하기위한 CSS       -->
+  <script src="HeaderImg.js"></script>              <!-- Header Img 파일 불러오기            -->
+  <script src="index.js"></script>                  <!-- 불러온 Header Img 파일 적용하기  CSS -->
   <title>항공대 전자 회로 동아리 E.S.C.</title>
 </head>
 <body>
+
   <div class="paddingBox">
+    <!--========================================================================================
+    *
+    *    Header : 페이지 제일 위에 로고와 로그인 정보를 표시하는 해더
+    *    최대 8장 까지 지원하는 이미지 슬라이더도 제공
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="header">
       <div class ="mostTop">
         <span class="headerName"><a href="/">&nbsp;&nbsp;전자회로 동아리 ESC</a></span>
         <span class ="userMenu">
           가나다라마바사
         </span>
-        <div class="mainLogo"><a href="/"><img class="titleLogo"src="./img/header/TitleLogo.png" alt=""></a></div>
+        <div class="mainLogo">
+          <a href="/"><img class="titleLogo"src="./img/header/TitleLogo.png" alt=""></a>
+        </div>
 
       </div>
 
@@ -43,6 +75,13 @@
       </div>
     </div>
 
+
+    <!--========================================================================================
+    *
+    *    nav : 페이지를 주로 이동 할 수 있는 내비게이터
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="nav">
       <ul class="navTop">
         <li>
@@ -85,6 +124,12 @@
       </ul>
     </div>
 
+    <!--========================================================================================
+    *
+    *    main : 주된 페이지 내용이 담기는 곳. 페이지마다 다르다.
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="main">
       <div class="aside">
         a
@@ -95,6 +140,12 @@
     </div>
 
 
+    <!--========================================================================================
+    *
+    *    Footer : 페이지 최 하단에 나타나는 Footer
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
     <div class="footer" align="center">
       <div class="footerPaddingBox">
         <span class ="footerText1">
@@ -123,7 +174,6 @@
             <li><a href="http://naver.me/58Op0YST"><i class="fas fa-map-marked-alt"></i></a></li>
             <li><a href="http://Kimyc1223.github.io"><i class="fas fa-globe-asia"></i></a></li>
           </ul>
-
         </span>
       </div>
     </div>

@@ -10,9 +10,10 @@ module.exports = function (app) {
       res.render(__dirname+'/HTML_CSS_JS/index.ejs')
   })
 
-  app.get('/mainPage', (req,res) => {
-    res.render(__dirname+'/mainPage.ejs');
-  });
+  app.get('/template', (req,res) => {
+    res.render(__dirname+'/HTML_CSS_JS/template.ejs')
+  })
+
 
   app.get( '/getTrainInfo',(req,res) => {
     request(trainInfoURL,(error,response,html) => {
