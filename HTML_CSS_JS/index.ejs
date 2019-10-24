@@ -38,10 +38,10 @@
   <script src="mainPageAngularJS.js"></script>      <!-- Train 정보를 가져오기 위한 AnuglarJS -->
   <title>항공대 전자 회로 동아리 E.S.C.</title>
 </head>
-<body>
+<body ng-app="mainPage" ng-controller="MainpageController" ng-init="updateTrainTable()">
   <div class="paddingBox">
     <!--========================================================================================
-    *
+    *  
     *    Header : 페이지 제일 위에 로고와 로그인 정보를 표시하는 해더
     *    최대 8장 까지 지원하는 이미지 슬라이더도 제공
     *    2019.10.18 KimYC1223
@@ -466,12 +466,12 @@
                 </td>
               </tr>
               <tr class="timeTalbeTr">
-                <td><span id="toPajuLocation_1">열차 정보 없음</span></td>
-                <td><span id="toPajuOffset_1">-</span></td>
+                <td><span id="toPajuLocation_1">{{trainTable[0][0].state}}</span></td>
+                <td><span id="toPajuOffset_1">{{trainTable[0][0].offset}}</span></td>
               </tr>
               <tr class="timeTalbeTr twoTr">
-                <td><span id="toPajuLocation_2">열차 정보 없음</span></td>
-                <td><span id="toPajuOffset_2">-</span></td>
+                <td><span id="toPajuLocation_2">{{trainTable[0][1].state}}</span></td>
+                <td><span id="toPajuOffset_2">{{trainTable[0][1].offset}}</span></td>
               </tr>
             </table>
 
@@ -492,12 +492,12 @@
                 </td>
               </tr>
               <tr class="timeTalbeTr">
-                <td><span id="toSeoulLocation_1">열차 정보 없음</span></td>
-                <td><span id="toSeoulOffset_1">-</span></td>
+                <td><span id="toSeoulLocation_1">{{trainTable[1][0].state}}</span></td>
+                <td><span id="toSeoulOffset_1">{{trainTable[1][0].offset}}</span></td>
               </tr>
               <tr class="timeTalbeTr twoTr">
-                <td><span id="toSeoulLocation_2">열차 정보 없음</span></td>
-                <td><span id="toSeoulOffset_2">-</span></td>
+                <td><span id="toSeoulLocation_2">{{trainTable[1][1].state}}</span></td>
+                <td><span id="toSeoulOffset_2">{{trainTable[1][1].offset}}</span></td>
               </tr>
             </table>
             <span class="currentTime" id="currentTimeSpan">기준 시간 : </span>
@@ -532,7 +532,7 @@
           </ul>
         </span>
         <span class="makerText">
-            만든이 : 35th 김영찬 2019.10 <%=test %>
+            만든이 : 35th 김영찬 2019.10
         </span><br>
         <span class="footerLink2">
           <ul>
