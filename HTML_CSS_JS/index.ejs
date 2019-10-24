@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--============================================================================================
+*
+*    ┏━━━━━━━━━━━━━━━━━━━━┓
+*    ┃ ■■■■  ■■■■ ■■■■            ┃
+*    ┃ ■        ■       ■                  ┃
+*    ┃ ■■■■  ■■■■ ■                  ┃
+*    ┃ ■              ■ ■                  ┃
+*    ┃ ■■■■  ■■■■ ■■■■            ┃
+*    ┃                                        ┃
+*    ┃ K.A.U webpage ... ver 1.0.0            ┃
+*    ┠──────┬─────────────┨
+*    ┃ Developer  │ 35th 2013122041 KYC      ┃
+*    ┃ Language   │ HTML CSS Javascript      ┃
+*    ┃ Tools      │ Nodejs Mysql Atom        ┃
+*    ┃ gitHub     │ KimYC1223.github.io      ┃
+*    ┃ email      │ kau_esc@naver.com        ┃
+*    ┗━━━━━━┷━━━━━━━━━━━━━┛
+*
+*    Main Page HTML : 처음 사용자에게 보여지는 대문 페이지
+*    2019.10.18 KimYC1223
+*
+*============================================================================================-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script data-require="angularjs@1.5.7" data-semver="1.5.7" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="index.css" />        <!-- 모든 페이지의 기본 CSS              -->
+  <link rel="stylesheet" href="mainPage.css" />     <!-- Main Page만의 CSS                  -->
+  <link rel="stylesheet" href="HeaderImg.css" />    <!-- Header Img를 조절하기위한 CSS       -->
+  <script src="HeaderImg.js"></script>              <!-- Header Img 파일 불러오기            -->
+  <script src="index.js"></script>                  <!-- 불러온 Header Img 파일 적용하기  CSS -->
+  <script src="mainPageAngularJS.js"></script>      <!-- Train 정보를 가져오기 위한 AnuglarJS -->
+  <title>항공대 전자 회로 동아리 E.S.C.</title>
+</head>
+<body>
+  <div class="paddingBox">
+    <!--========================================================================================
+    *
+    *    Header : 페이지 제일 위에 로고와 로그인 정보를 표시하는 해더
+    *    최대 8장 까지 지원하는 이미지 슬라이더도 제공
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
+    <div class="header">
+      <div class ="mostTop">
+        <span class="headerName"><a href="/">&nbsp;&nbsp;전자회로 동아리 ESC</a></span>
+        <span class ="userMenu">
+          가나다라마바사
+        </span>
+        <div class="mainLogo">
+          <a href="/"><img class="titleLogo"src="./img/header/TitleLogo.png" alt=""></a>
+        </div>
+
+      </div>
+
+      <div class="headerBlackImg">
+        <div class="headerImgText" id="headerImgText"></div>
+        <div class ="headerSelect" id = "headerSelect">
+        </div>
+      </div>
+      <div class="headerImg" id="headerImgDiv">
+        <input type="radio" name="r" id="r1">
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <input type="radio" name="r" id="r4">
+        <input type="radio" name="r" id="r5">
+        <input type="radio" name="r" id="r6">
+        <input type="radio" name="r" id="r7">
+        <input type="radio" name="r" id="r8">
+      </div>
+    </div>
+
+
+    <!--========================================================================================
+    *
+    *    nav : 페이지를 주로 이동 할 수 있는 내비게이터
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
+    <div class="nav">
+      <ul class="navTop">
+        <li>
+          소개
+          <ul class="navSub">
+            <li><a href="/greeting">인삿말</a></li>
+            <li><a href="/intro">동아리 소개</a></li>
+            <li><a href="/history">동아리 연혁</a></li>
+            <li><a href="/adminMember">운영진</a></li>
+          </ul>
+        </li>
+
+        <li>
+          활동
+          <ul class="navSub">
+            <li><a href="/calander">동아리 달력</a></li>
+            <li><a href="/photo">사진첩</a></li>
+            <li><a href="/award">명예의 전당</a></li>
+            <li><a href="/lab">ESC 실험실</a></li>
+          </ul>
+        </li>
+
+        <li>
+          게시판
+          <ul class="navSub">
+            <li><a href="/notice">공지 사항</a></li>
+            <li><a href="/post">자유 게시판</a></li>
+            <li><a href="/suggestions">익명 건의 사항</a></li>
+          </ul>
+        </li>
+
+        <li>
+          운영
+          <ul class="navSub">
+            <li><a href="/address">동아리 주소록</a></li>
+            <li><a href="/accountBook">회계 장부</a></li>
+            <li><a href="/address">관리자 페이지</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!--========================================================================================
+    *
+    *    main : 주된 페이지 내용이 담기는 곳. 페이지마다 다르다.
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
+    <div class="main">
+
+      <!--======================================================================================
+      *
+      *    notice : 공지사항
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
+      <div class ="mainPageContent">
+        <div class="titleName">
+          <span class="titleKorean">공지 사항</span>
+          <span class="titleEnglish">Notice</span>
+        </div>
+        <div class="thumbnailBox">
+          <div class="thumbnailImg">
+            <img src="./img/noThumbnail.png" class="thumbnail" id="noticeThum">
+          </div>
+          <div class="thumbnailTitle">게시글이 존재하지 않습니다.</div>
+        </div>
+        <div class="resentPost">
+          <table>
+            <tr>
+              <td><img src="./img/icon/num_1.png"></td>
+              <td><span id="noticePostTitle_1">-</span></td>
+              <td><span id="noticePostIcon_1">-</span></td>
+              <td><span id="noticePostAuthor_1">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_2.png"></td>
+              <td><span id="noticePostTitle_2">-</span></td>
+              <td><span id="noticePostIcon_2">-</span></td>
+              <td><span id="noticePostAuthor_2">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_3.png"></td>
+              <td><span id="noticePostTitle_3">-</span></td>
+              <td><span id="noticePostIcon_3">-</span></td>
+              <td><span id="noticePostAuthor_3">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_4.png"></td>
+              <td><span id="noticePostTitle_4">-</span></td>
+              <td><span id="noticePostIcon_4">-</span></td>
+              <td><span id="noticePostAuthor_4">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_5.png"></td>
+              <td><span id="noticePostTitle_5">-</span></td>
+              <td><span id="noticePostIcon_5">-</span></td>
+              <td><span id="noticePostAuthor_5">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_6.png"></td>
+              <td><span id="noticePostTitle_6">-</span></td>
+              <td><span id="noticePostIcon_6">-</span></td>
+              <td><span id="noticePostAuthor_6">-</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+      <!--======================================================================================
+      *
+      *    Feee Board : 자유 게시판
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
+      <div class ="mainPageContent">
+        <div class="titleName">
+          <span class="titleKorean">자유 게시판</span>
+          <span class="titleEnglish">Free Board</span>
+        </div>
+        <div class="thumbnailBox">
+          <div class="thumbnailImg">
+            <img src="./img/noThumbnail.png" class="thumbnail" id="freeBoardThum">
+          </div>
+          <div class="thumbnailTitle">게시글이 존재하지 않습니다.</div>
+        </div>
+        <div class="resentPost">
+          <table>
+            <tr>
+              <td><img src="./img/icon/num_1.png"></td>
+              <td><span id="freeBoardPostTitle_1">-</span></td>
+              <td><span id="freeBoardPostIcon_1">-</span></td>
+              <td><span id="freeBoardPostAuthor_1">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_2.png"></td>
+              <td><span id="freeBoardPostTitle_2">-</span></td>
+              <td><span id="freeBoardPostIcon_2">-</span></td>
+              <td><span id="freeBoardPostAuthor_2">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_3.png"></td>
+              <td><span id="freeBoardPostTitle_3">-</span></td>
+              <td><span id="freeBoardPostIcon_3">-</span></td>
+              <td><span id="freeBoardPostAuthor_3">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_4.png"></td>
+              <td><span id="freeBoardPostTitle_4">-</span></td>
+              <td><span id="freeBoardPostIcon_4">-</span></td>
+              <td><span id="freeBoardPostAuthor_4">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_5.png"></td>
+              <td><span id="freeBoardPostTitle_5">-</span></td>
+              <td><span id="freeBoardPostIcon_5">-</span></td>
+              <td><span id="freeBoardPostAuthor_5">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_6.png"></td>
+              <td><span id="freeBoardPostTitle_6">-</span></td>
+              <td><span id="freeBoardPostIcon_6">-</span></td>
+              <td><span id="freeBoardPostAuthor_6">-</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!--======================================================================================
+      *
+      *    Album : 사진첩
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
+      <div class ="mainPageContent">
+        <div class="titleName">
+          <span class="titleKorean">사진첩</span>
+          <span class="titleEnglish">Album</span>
+        </div>
+        <div class="thumbnailBox">
+          <div class="thumbnailImg">
+            <img src="./img/noThumbnail.png" class="thumbnail" id="albumThum">
+          </div>
+          <div class="thumbnailTitle">게시글이 존재하지 않습니다.</div>
+        </div>
+        <div class="resentPost">
+          <table>
+            <tr>
+              <td><img src="./img/icon/num_1.png"></td>
+              <td><span id="albumPostTitle_1">-</span></td>
+              <td><span id="albumPostIcon_1">-</span></td>
+              <td><span id="albumPostAuthor_1">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_2.png"></td>
+              <td><span id="albumPostTitle_2">-</span></td>
+              <td><span id="albumPostIcon_2">-</span></td>
+              <td><span id="albumPostAuthor_2">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_3.png"></td>
+              <td><span id="albumPostTitle_3">-</span></td>
+              <td><span id="albumPostIcon_3">-</span></td>
+              <td><span id="albumPostAuthor_3">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_4.png"></td>
+              <td><span id="albumPostTitle_4">-</span></td>
+              <td><span id="albumPostIcon_4">-</span></td>
+              <td><span id="albumPostAuthor_4">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_5.png"></td>
+              <td><span id="albumPostTitle_5">-</span></td>
+              <td><span id="albumPostIcon_5">-</span></td>
+              <td><span id="albumPostAuthor_5">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_6.png"></td>
+              <td><span id="albumPostTitle_6">-</span></td>
+              <td><span id="albumPostIcon_6">-</span></td>
+              <td><span id="albumPostAuthor_6">-</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!--======================================================================================
+      *
+      *    Calendar : 동아리 달력
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
+      <div class ="mainPageContent">
+        <div class="titleName">
+          <span class="titleKorean">동아리 달력</span>
+          <span class="titleEnglish">Calendar</span>
+        </div>
+        <div class="thumbnailBox">
+          <div class="thumbnailImg">
+            <img src="./img/noThumbnail.png" class="thumbnail" id="calendarThum">
+          </div>
+          <div class="thumbnailTitle">게시글이 존재하지 않습니다.</div>
+        </div>
+        <div class="resentPost">
+          <table>
+            <tr>
+              <td><img src="./img/icon/num_1.png"></td>
+              <td><span id="calendarPostTitle_1">-</span></td>
+              <td><span id="calendarPostIcon_1">-</span></td>
+              <td><span id="calendarPostAuthor_1">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_2.png"></td>
+              <td><span id="calendarPostTitle_2">-</span></td>
+              <td><span id="calendarPostIcon_2">-</span></td>
+              <td><span id="calendarPostAuthor_2">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_3.png"></td>
+              <td><span id="calendarPostTitle_3">-</span></td>
+              <td><span id="calendarPostIcon_3">-</span></td>
+              <td><span id="calendarPostAuthor_3">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_4.png"></td>
+              <td><span id="calendarPostTitle_4">-</span></td>
+              <td><span id="calendarPostIcon_4">-</span></td>
+              <td><span id="calendarPostAuthor_4">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_5.png"></td>
+              <td><span id="calendarPostTitle_5">-</span></td>
+              <td><span id="calendarPostIcon_5">-</span></td>
+              <td><span id="calendarPostAuthor_5">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_6.png"></td>
+              <td><span id="calendarPostTitle_6">-</span></td>
+              <td><span id="calendarPostIcon_6">-</span></td>
+              <td><span id="calendarPostAuthor_6">-</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!--======================================================================================
+      *
+      *    Anonymous : 익명 건의 사항
+      *    2019.10.18 KimYC1223
+      *
+      *======================================================================================-->
+      <div class ="mainPageContent">
+        <div class="titleName">
+          <span class="titleKorean">익명 건의사항</span>
+          <span class="titleEnglish">Anonymous</span>
+        </div>
+        <div class="thumbnailBox">
+          <div class="thumbnailImg">
+            <img src="./img/noThumbnail.png" class="thumbnail" id="anonymousThum">
+          </div>
+          <div class="thumbnailTitle">게시글이 존재하지 않습니다.</div>
+        </div>
+        <div class="resentPost">
+          <table>
+            <tr>
+              <td><img src="./img/icon/num_1.png"></td>
+              <td><span id="anonymousPostTitle_1">-</span></td>
+              <td><span id="anonymousPostIcon_1">-</span></td>
+              <td><span id="anonymousPostAuthor_1">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_2.png"></td>
+              <td><span id="anonymousPostTitle_2">-</span></td>
+              <td><span id="anonymousPostIcon_2">-</span></td>
+              <td><span id="anonymousPostAuthor_2">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_3.png"></td>
+              <td><span id="anonymousPostTitle_3">-</span></td>
+              <td><span id="anonymousPostIcon_3">-</span></td>
+              <td><span id="anonymousPostAuthor_3">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_4.png"></td>
+              <td><span id="anonymousPostTitle_4">-</span></td>
+              <td><span id="anonymousPostIcon_4">-</span></td>
+              <td><span id="anonymousPostAuthor_4">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_5.png"></td>
+              <td><span id="anonymousPostTitle_5">-</span></td>
+              <td><span id="anonymousPostIcon_5">-</span></td>
+              <td><span id="anonymousPostAuthor_5">-</span></td>
+            </tr>
+            <tr>
+              <td><img src="./img/icon/num_6.png"></td>
+              <td><span id="anonymousPostTitle_6">-</span></td>
+              <td><span id="anonymousPostIcon_6">-</span></td>
+              <td><span id="anonymousPostAuthor_6">-</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!--======================================================================================
+      *
+      *    Transfortation : 경의선 시간표
+      *    2019.10.22 KimYC1223
+      *
+      *======================================================================================-->
+      <div class ="mainPageContent timeTableMotherDiv">
+        <div class="titleName">
+          <span class="titleKorean">경의선 시간표</span>
+          <span class="titleEnglish">Transfortation</span>
+        </div>
+        <div class="timeTable">
+          <div class ="tableBox">
+            <table class="stationImg" onclick="gotoNaver()">
+              <tr><td class="stationImgTd">
+                <div class="clickToNaverDiv">
+                  <span class="clickToNaver">클릭시 네이버 지도로 이동</span>
+                </div>
+              </td></tr>
+            </table>
+            <table class="toPajuTimeTalbe">
+              <tr>
+                <td colspan="2">
+                  <table class="toPaju" width="80%">
+                    <tr>
+                      <td align="right"><span class="pajuText">강매</span></td>
+                      <td>
+                        <span class="arrowHighlight">◀</span>
+                        &nbsp;<span class="hwajun">화전</span>
+                        &nbsp;<span class="arrowNone">▶</span>
+                      </td>
+                      <td align="left"><span class="susaekText">수색</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr class="timeTalbeTr">
+                <td><span id="toPajuLocation_1">열차 정보 없음</span></td>
+                <td><span id="toPajuOffset_1">-</span></td>
+              </tr>
+              <tr class="timeTalbeTr twoTr">
+                <td><span id="toPajuLocation_2">열차 정보 없음</span></td>
+                <td><span id="toPajuOffset_2">-</span></td>
+              </tr>
+            </table>
+
+            <table class="toSeoulTimeTalbe">
+              <tr>
+                <td colspan="2">
+                  <table class="toSeoul" width="80%">
+                    <tr>
+                      <td align="right"><span class="pajuText">강매</span></td>
+                      <td>
+                        <span class="arrowNone">◀</span>
+                        &nbsp;<span class="hwajun">화전</span>
+                        &nbsp;<span class="arrowHighlight">▶</span>
+                      </td>
+                      <td align="left"><span class="susaekText">수색</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr class="timeTalbeTr">
+                <td><span id="toSeoulLocation_1">열차 정보 없음</span></td>
+                <td><span id="toSeoulOffset_1">-</span></td>
+              </tr>
+              <tr class="timeTalbeTr twoTr">
+                <td><span id="toSeoulLocation_2">열차 정보 없음</span></td>
+                <td><span id="toSeoulOffset_2">-</span></td>
+              </tr>
+            </table>
+            <span class="currentTime" id="currentTimeSpan">기준 시간 : </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--========================================================================================
+    *
+    *    Footer : 페이지 최 하단에 나타나는 Footer
+    *    2019.10.18 KimYC1223
+    *
+    *========================================================================================-->
+    <div class="footer" align="center">
+      <div class="footerPaddingBox">
+        <span class ="footerText1">
+          한국 항공대학교 전자회로 연구회 :
+          Kerea Areospace University Electronic-circuit Study Circle
+        </span>
+        <span class ="footerText2">
+          Kerea Areospace University<br>Electronic-circuit Study Circle
+        </span>
+        <span class="footerLink1">
+          <ul>
+            <li><a href="/use">이용 약관</a></li>
+            <li><a href="/prvate">개인정보 처리 방침</a></li>
+            <li><a href="/email">이메일 무단 수집 거부</a></li>
+            <li><a href="/law">책임의 한계와 법적 고지</a></li>
+            <li><a href="/howToUse">이용 안내</a></li>
+          </ul>
+        </span>
+        <span class="makerText">
+            만든이 : 35th 김영찬 2019.10 <%=test %>
+        </span><br>
+        <span class="footerLink2">
+          <ul>
+            <li><a href="https://github.com/KimYC1223"><i class="fab fa-github-square"></i></a></li>
+            <li><a href="https://www.facebook.com/groups/157447974291919/"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="http://naver.me/58Op0YST"><i class="fas fa-map-marked-alt"></i></a></li>
+            <li><a href="http://Kimyc1223.github.io"><i class="fas fa-globe-asia"></i></a></li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
